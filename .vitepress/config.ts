@@ -106,11 +106,28 @@ export default defineConfig({
         ],
       },
       {
+        text: "typescript",
+        collapsed: false,
+        items: [
+          { text: "类型注解", link: "/blog/typescript/annotation" },
+          { text: "类型断言", link: "/blog/typescript/assertion" },
+          { text: "tsconfig", link: "/blog/typescript/tsconfig" },
+        ],
+      },
+      {
         text: "ci-cd",
         collapsed: false,
         items: [
           { text: "代码检查校验", link: "/blog/ci-cd/code-lint" },
           { text: "gh-pages", link: "/blog/ci-cd/gh-pages" },
+        ],
+      },
+      {
+        text: "theme",
+        collapsed: false,
+        items: [
+          { text: "css变量", link: "/blog/theme/css-variable" },
+          { text: "动态style", link: "/blog/theme/dynamic-style" },
         ],
       },
       {
