@@ -30,7 +30,7 @@ export default defineConfig({
       { text: "首页", link: "/" },
       {
         text: "博客",
-        link: "/blog/vue/change-detection",
+        link: "/blog/vue/v3/change-detection",
         activeMatch: "/blog/",
       },
     ],
@@ -42,43 +42,76 @@ export default defineConfig({
         text: "vue",
         collapsed: false,
         items: [
-          { text: "变更检查机制", link: "/blog/vue/change-detection" },
-          { text: "依赖注入", link: "/blog/vue/dependency-injection" },
-          { text: "http请求", link: "/blog/vue/http" },
-          { text: "国际化", link: "/blog/vue/internationalization" },
-          { text: "jsx", link: "/blog/vue/jsx" },
-          { text: "keep-alive", link: "/blog/vue/keep-alive" },
-          { text: "路由", link: "/blog/vue/router" },
-          { text: "数据仓库", link: "/blog/vue/store" },
-          { text: "模板语法", link: "/blog/vue/template" },
+          {
+            text: "v3",
+            collapsed: false,
+            items: [
+              { text: "变更检查机制", link: "/blog/vue/v3/change-detection" },
+              { text: "依赖注入", link: "/blog/vue/v3/dependency-injection" },
+              { text: "http请求", link: "/blog/vue/v3/http" },
+              { text: "国际化", link: "/blog/vue/v3/internationalization" },
+              { text: "jsx", link: "/blog/vue/v3/jsx" },
+              { text: "keep-alive", link: "/blog/vue/v3/keep-alive" },
+              { text: "路由", link: "/blog/vue/v3/router" },
+              { text: "数据仓库", link: "/blog/vue/v3/store" },
+              { text: "多级树", link: "/blog/vue/v3/multi-level-tree" },
+            ],
+          },
         ],
       },
       {
         text: "react",
         collapsed: false,
         items: [
-          { text: "变更检查机制", link: "/blog/react/change-detection" },
-          { text: "依赖注入", link: "/blog/react/dependency-injection" },
-          { text: "http请求", link: "/blog/react/http" },
-          { text: "国际化", link: "/blog/react/internationalization" },
-          { text: "jsx", link: "/blog/react/jsx" },
-          { text: "keep-alive", link: "/blog/react/keep-alive" },
-          { text: "路由", link: "/blog/react/router" },
-          { text: "数据仓库", link: "/blog/react/store" },
+          {
+            text: "v18",
+            collapsed: false,
+            items: [
+              {
+                text: "变更检查机制",
+                link: "/blog/react/v18/change-detection",
+              },
+              {
+                text: "依赖注入",
+                link: "/blog/react/v18/dependency-injection",
+              },
+              { text: "http请求", link: "/blog/react/v18/http" },
+              { text: "国际化", link: "/blog/react/v18/internationalization" },
+              { text: "keep-alive", link: "/blog/react/v18/keep-alive" },
+              { text: "路由", link: "/blog/react/v18/router" },
+              { text: "数据仓库", link: "/blog/react/v18/store" },
+              { text: "多级树", link: "/blog/react/v18//multi-level-tree" },
+            ],
+          },
         ],
       },
       {
         text: "angular",
         collapsed: false,
         items: [
-          { text: "变更检查机制", link: "/blog/angular/change-detection" },
-          { text: "依赖注入", link: "/blog/angular/dependency-injection" },
-          { text: "http请求", link: "/blog/angular/http" },
-          { text: "国际化", link: "/blog/angular/internationalization" },
-          { text: "keep-alive", link: "/blog/angular/keep-alive" },
-          { text: "路由", link: "/blog/angular/router" },
-          { text: "数据仓库", link: "/blog/angular/store" },
-          { text: "模板语法", link: "/blog/angular/template" },
+          {
+            text: "v16",
+            collapsed: false,
+            items: [
+              {
+                text: "变更检查机制",
+                link: "/blog/angular/v16/change-detection",
+              },
+              {
+                text: "依赖注入",
+                link: "/blog/angular/v16/dependency-injection",
+              },
+              { text: "http请求", link: "/blog/angular/v16/http" },
+              {
+                text: "国际化",
+                link: "/blog/angular/v16/internationalization",
+              },
+              { text: "keep-alive", link: "/blog/angular/v16/keep-alive" },
+              { text: "路由", link: "/blog/angular/v16/router" },
+              { text: "数据仓库", link: "/blog/angular/v16/store" },
+              { text: "多级树", link: "/blog/angular/v16/multi-level-tree" },
+            ],
+          },
         ],
       },
       {
@@ -99,10 +132,15 @@ export default defineConfig({
         text: "webpack",
         collapsed: false,
         items: [
-          { text: "loader", link: "/blog/webpack/loader" },
-          { text: "plugin", link: "/blog/webpack/plugin" },
-          { text: "env", link: "/blog/webpack/env" },
-          { text: "dev-server", link: "/blog/webpack/dev-server" },
+          {
+            text: "v5",
+            items: [
+              { text: "loader", link: "/blog/webpack/v5/loader" },
+              { text: "plugin", link: "/blog/webpack/v5/plugin" },
+              { text: "env", link: "/blog/webpack/v5/env" },
+              { text: "dev-server", link: "/blog/webpack/v5/dev-server" },
+            ],
+          },
         ],
       },
       {
@@ -166,11 +204,13 @@ export default defineConfig({
       text: "上次更新",
     },
 
-    darkModeSwitchLabel: '主题模式',
+    outlineTitle: "本页目录",
 
-    sidebarMenuLabel: '菜单',
+    darkModeSwitchLabel: "主题模式",
 
-    returnToTopLabel: '返回顶部',
+    sidebarMenuLabel: "菜单",
+
+    returnToTopLabel: "返回顶部",
 
     docFooter: {
       prev: "上一篇",
