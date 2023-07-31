@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 博客
-      link: /blog/api-examples
+      link: /blog/vue/change-detection
 
 features:
   - icon:
