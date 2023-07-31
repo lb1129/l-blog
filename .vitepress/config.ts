@@ -166,6 +166,12 @@ export default defineConfig({
       text: "上次更新",
     },
 
+    darkModeSwitchLabel: '主题模式',
+
+    sidebarMenuLabel: '菜单',
+
+    returnToTopLabel: '返回顶部',
+
     docFooter: {
       prev: "上一篇",
       next: "下一篇",
