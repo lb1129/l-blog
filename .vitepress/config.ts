@@ -1,8 +1,8 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "l-blog",
-  description: "blog",
+  title: "Viho Lei",
+  description: "个人博客",
   lang: "zh-CN",
   base: "/l-blog",
   lastUpdated: true,
@@ -20,7 +20,7 @@ export default defineConfig({
       "link",
       {
         rel: "icon",
-        href: "https://mp-d2e0b969-5400-4832-adeb-d0127579976e.cdn.bspapp.com/favicon.ico",
+        href: "/l-blog/favicon.ico",
       },
     ],
   ],
@@ -30,6 +30,8 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "博客", link: "/blog/api-examples", activeMatch: "/blog/" },
     ],
+
+    socialLinks: [{ icon: "github", link: "https://github.com/lb1129" }],
 
     sidebar: [
       {
@@ -41,8 +43,6 @@ export default defineConfig({
         ],
       },
     ],
-
-    socialLinks: [{ icon: "github", link: "https://github.com/lb1129/l-blog" }],
 
     search: {
       provider: "local",
@@ -65,8 +65,17 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: "https://github.com/lb1129/l-blog/edit/main/docs/:path",
-      text: "Edit this page on GitHub",
+      pattern: "https://github.com/lb1129/l-blog/edit/master/:path",
+      text: "在 GitHub 上编辑此页",
+    },
+
+    lastUpdated: {
+      text: '上次更新'
+    },
+
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
     },
 
     footer: {
