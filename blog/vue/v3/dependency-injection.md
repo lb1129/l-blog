@@ -7,25 +7,25 @@
 上层组件提供服务（非响应式数据，响应式数据）
 
 ```vue
-<script setup>
-import { provide, ref, readonly } from 'vue'
+<script setup lang="ts">
+import { provide, ref, readonly } from "vue";
 
-const username = ref('')
-const nickname = ref('')
+const username = ref("");
+const nickname = ref("");
 
 const updateNickname = () => {
-  nickname.value = 'viho'
-}
+  nickname.value = "viho";
+};
 
 // 非响应式数据
-provide('message', 'hello')
+provide("message", "hello");
 // 响应式数据
-provide('username', readonly(username))
+provide("username", readonly(username));
 // 响应式数据的变更由服务提供方提供变更方法
-provide('nickname', {
+provide("nickname", {
   nickname: readonly(nickname),
-  updateNickname
-})
+  updateNickname,
+});
 </script>
 ```
 
@@ -34,12 +34,22 @@ provide('nickname', {
 下层组件使用服务
 
 ```vue
-<script setup>
-import { inject } from 'vue'
+<script setup lang="ts">
+import { inject, type Ref, ref } from "vue";
 
-const message = inject('message')
-const username = inject('username')
-const { nickname, updateNickname } = inject('nickname')
+const message = inject("message");
+const username = inject("username");
+const { nickname, updateNickname } = inject<{
+  nickname: Readonly<Ref<string>>;
+  updateNickname: () => void;
+}>(
+  "nickname",
+  () => ({
+    nickname: ref(""),
+    updateNickname() {},
+  }),
+  true
+);
 </script>
 
 <template>
