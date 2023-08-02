@@ -29,7 +29,7 @@ app.use(pinia);
 app.mount("#app");
 ```
 
-## 定义 store
+## 定义 store state
 
 stores/userInfo.ts 用户信息
 
@@ -54,7 +54,7 @@ export const useUserInfo = defineStore("userInfo", () => {
 });
 ```
 
-## 使用 store
+## 使用 store state
 
 ```vue
 <script setup lang="ts">
