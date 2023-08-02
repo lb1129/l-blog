@@ -57,10 +57,12 @@ const router = createRouter({
   routes
 })
 
+// 前置全局导航守卫
 router.beforeEach(async (to， from) => {
   // 是否已登录 跳转控制 可进行异步控制
 })
 
+// 后置全局导航守卫
 router.afterEach((to, from) => {
   // 修改标题 ...
 })
