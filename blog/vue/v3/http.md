@@ -56,6 +56,8 @@ export const upload_get_params_api = "/api/getUploadParams";
 支持直接返回后台接口响应的数据
 
 ```ts
+import 'axios'
+
 declare module "axios" {
   export interface AxiosInstance {
     <T = any, R = AxiosResponse<T>, D = any>(
