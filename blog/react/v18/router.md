@@ -106,6 +106,7 @@ export default router;
 ## 在根组件 App 中使用
 
 ```tsx
+import React from "react";
 import { RouterProvider } from "react-router-dom";
 import router from "@/router";
 
@@ -182,11 +183,11 @@ export function withNavigation<P>(
 import React, { Component } from "react";
 import { withNavigation, type WithNavigation } from "./hoc";
 
-type props = {
+type Props = {
   name: string;
 } & WithNavigation;
 
-class ClassDemo extends Component<props> {
+class ClassDemo extends Component<Props> {
   render() {
     return (
       <button
@@ -201,4 +202,33 @@ class ClassDemo extends Component<props> {
 }
 
 export default withNavigation(ClassDemo);
+```
+
+## 动态路由
+
+```ts
+import router from "@/router";
+import baseRoutes from "@/router/baseRoutes";
+
+// 根据业务逻辑 生成动态路由（比如用户菜单）
+const routes = generateRoutes(menuData.data);
+
+// 将动态路由插入基础路由（根据业务逻辑选择插入位置）
+const insertTo = baseRoutes[0].children;
+if (insertTo && insertTo.length) {
+  baseRoutes[0].children = [
+    insertTo[0],
+    ...routes,
+    insertTo[insertTo.length - 1],
+  ];
+}
+
+// 重设路由
+router._internalSetRoutes([...baseRoutes]);
+
+// 触发重新匹配
+const { pathname, search, hash } = router.state.location;
+router.navigate(pathname + search + hash, {
+  replace: true,
+});
 ```
