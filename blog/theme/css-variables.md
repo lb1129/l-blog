@@ -1,8 +1,8 @@
 # 使用 css variable 实现主题色运行时切换
 
-实现任意颜色的主题色  
+实现任意颜色的主题色
 
-[css variable](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties)
+[css variable 文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties)
 
 ## 声明变量
 
@@ -25,7 +25,7 @@ h1 {
 ## 切换变量值
 
 ```js
-document.documentElement.style.setProperty('--primary-color', '#52c41a')
+document.documentElement.style.setProperty("--primary-color", "#52c41a");
 ```
 
 ## 兼容性
