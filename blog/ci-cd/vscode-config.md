@@ -1,16 +1,20 @@
 # vscode 配置
 
+项目根目录创建如下目录结构（.gitignore 不要忽略 .vscode 目录）
+
+```
+.vscode
+├─ settings.json
+└─ launch.json
+```
+
 ## 安装扩展
 
 [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) 来结合项目的 [代码及提交检查](./code-lint) 在 IDE 内进行错误或警告提示
 
 左侧扩展按钮（Ctrl+Shift+X）点击进入应用商店搜索上述扩展并安装
 
-## 工具区设置
-
-仅对当前项目生效的设置
-
-### 配置文件保存自动格式化
+## 文件保存格式化
 
 settings.json
 
@@ -25,9 +29,9 @@ settings.json
 }
 ```
 
-### 配置 Tode Tree
+## Tode Tree
 
-安装 [Tode Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) 扩展  
+安装 [Tode Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) 扩展
 
 修改 settings.json 为
 
@@ -92,9 +96,11 @@ settings.json
 }
 ```
 
-## launch.json
+## 调试配置
 
-调试服务配置，可使用 vscode 断点调试
+可使用 `vscode` 断点调试
+
+launch.json
 
 ```json
 {
