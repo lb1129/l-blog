@@ -7,10 +7,24 @@
 ## 定义 store state
 
 ```ts
-import { createAction, createReducer } from "@reduxjs/toolkit";
+import {
+  createAction,
+  createReducer,
+  createAsyncThunk,
+} from "@reduxjs/toolkit";
 import type { UserType } from "@/types/user";
 
+// action
 export const setUserInfo = createAction<Partial<UserType>>("setUserInfo");
+// 异步 action
+export const getUserInfoAsync = createAsyncThunk(
+  "getUserInfoAsync",
+  async (extraInfo, { dispatch }) => {
+    // 异步处理
+    // ...
+    // dispatch 同步action
+  }
+);
 
 const initialState: UserType = {
   _id: "",
@@ -21,6 +35,7 @@ const initialState: UserType = {
   profile: "",
 };
 
+// reducer
 const reducer = createReducer(initialState, (builder) => {
   builder.addCase(setUserInfo, (state, action) => {
     return Object.assign({}, state, action.payload);
@@ -92,6 +107,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 函数组件
 
 ```tsx
+import React from "react";
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { setUserInfo } from "@/store/userInfoSlice";
 
