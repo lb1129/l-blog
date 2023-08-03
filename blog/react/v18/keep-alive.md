@@ -256,7 +256,8 @@ export default function FCDemo() {
 
 ## 其他说明
 
-`AliveScope` 组件下可以放多个 `KeepAlive` 组件  
+`AliveScope` 组件下可以放多个 `KeepAlive` 组件
+
 `KeepAlive` 组件必须传入 id，id 与组件相关联
 
 关注 react18 官方 [Offscreen](https://react.dev/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022#offscreen)
