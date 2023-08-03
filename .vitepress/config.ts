@@ -157,7 +157,8 @@ export default defineConfig({
         text: "ci-cd",
         collapsed: false,
         items: [
-          { text: "代码检查校验", link: "/blog/ci-cd/code-lint" },
+          { text: "代码及提交检查", link: "/blog/ci-cd/code-lint" },
+          { text: "vscode配置", link: "/blog/ci-cd/vscode-config" },
           { text: "gh-pages", link: "/blog/ci-cd/gh-pages" },
         ],
       },
