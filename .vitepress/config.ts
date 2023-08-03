@@ -166,7 +166,7 @@ export default defineConfig({
         text: "theme",
         collapsed: false,
         items: [
-          { text: "css变量", link: "/blog/theme/css-variable" },
+          { text: "css变量", link: "/blog/theme/css-variables" },
           { text: "动态style", link: "/blog/theme/dynamic-style" },
           { text: "css-in-js", link: "/blog/theme/css-in-js" },
         ],
