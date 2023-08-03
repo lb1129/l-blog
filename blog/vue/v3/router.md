@@ -34,6 +34,11 @@ const routes: RouteRecordRaw[] = [
     meta: {},
     component: () => import("@/views/Login.vue"),
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("@/views/NotFound.vue"),
+  },
 ];
 
 export default routes;
@@ -107,4 +112,25 @@ router.replace({
   name: "Home",
 });
 router.back();
+```
+
+## 动态路由
+
+```vue
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+// 根据业务逻辑 生成动态路由（比如用户菜单）
+const routes = generateRoutes(menuDataStore.menuData);
+
+// 将动态路由插入基础路由（根据业务逻辑选择插入位置）
+routes.forEach((route) => {
+  router.addRoute("Index", route);
+});
+
+// 触发重新匹配
+router.replace(router.currentRoute.value.fullPath);
+</script>
 ```
