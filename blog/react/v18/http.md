@@ -6,7 +6,7 @@
 
 ## config.ts
 
-项目配置如果需要在运行时修改也起效，可选择将配置放入 public/config.json ，然后在入口 main.ts 使用 axios 请求 config.json ，获取内容后将配置合并到 config.ts ，然后调用 ReactDOM 挂载根组件，启动应用
+项目配置如果需要在运行时修改也起效，可选择将配置放入 public/config.json ，然后在入口 index.tsx 使用 axios 请求 config.json ，获取内容后将配置合并到 config.ts ，然后调用 ReactDOM 挂载根组件，启动应用
 
 ```ts
 export default {

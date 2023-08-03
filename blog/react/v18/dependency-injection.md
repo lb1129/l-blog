@@ -26,7 +26,7 @@ export const themeContext = React.createContext<{
 // 伪代码
 import { ThemeContext } from "./context";
 
-const [themeValue, setThemeValue] = useState('1890ff')
+const [themeValue, setThemeValue] = useState('#1890ff')
 
 <ThemeContext.Provider
   value={{

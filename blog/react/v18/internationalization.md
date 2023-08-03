@@ -102,13 +102,9 @@ import {
   Translation,
 } from "react-i18next";
 
-interface Props extends WithTranslation {}
+type Props = {} & WithTranslation;
 
-type State = {};
-
-class ClassDemo extends Component<Props, State> {
-  state = {};
-
+class ClassDemo extends Component<Props> {
   render() {
     const { t } = this.props;
     return (
@@ -121,5 +117,5 @@ class ClassDemo extends Component<Props, State> {
   }
 }
 
-export default withTranslation()(demo);
+export default withTranslation()(ClassDemo);
 ```
