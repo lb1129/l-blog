@@ -81,7 +81,7 @@ export default defineConfig({
               { text: "keep-alive", link: "/blog/react/v18/keep-alive" },
               { text: "路由", link: "/blog/react/v18/router" },
               { text: "数据仓库", link: "/blog/react/v18/store" },
-              { text: "多级树", link: "/blog/react/v18//multi-level-tree" },
+              { text: "不限层级树", link: "/blog/react/v18/multi-level-tree" },
             ],
           },
         ],
