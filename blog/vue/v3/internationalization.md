@@ -13,6 +13,7 @@
 ```ts
 export default {
   helloWorld: "你好世界",
+  // ...
 };
 ```
 
@@ -21,6 +22,7 @@ export default {
 ```ts
 export default {
   helloWorld: "Hello World",
+  // ...
 };
 ```
 

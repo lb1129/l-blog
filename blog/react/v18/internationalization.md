@@ -14,6 +14,7 @@
 export default {
   translation: {
     helloWorld: "你好世界",
+    // ...
   },
 };
 ```
@@ -24,6 +25,7 @@ export default {
 export default {
   translation: {
     helloWorld: "Hello World",
+    // ...
   },
 };
 ```
