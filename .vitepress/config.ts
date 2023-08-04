@@ -148,8 +148,6 @@ export default defineConfig({
         text: "typescript",
         collapsed: false,
         items: [
-          { text: "类型注解", link: "/blog/typescript/annotation" },
-          { text: "类型断言", link: "/blog/typescript/assertion" },
           { text: "tsconfig", link: "/blog/typescript/tsconfig" },
         ],
       },
