@@ -1,8 +1,8 @@
-# 使用 css variable 实现主题色运行时切换
+# 使用 css variables 实现主题色运行时切换
 
 实现任意颜色的主题色
 
-[css variable 文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties)
+[css variables 文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties)
 
 ## 声明变量
 
