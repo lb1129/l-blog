@@ -119,15 +119,23 @@ export default defineConfig({
         text: "uni-app",
         collapsed: false,
         items: [
-          { text: "国际化", link: "/blog/uni-app/internationalization" },
+          { text: "本地储存", link: "/blog/uni-app/storage" },
           { text: "数据仓库", link: "/blog/uni-app/store" },
           { text: "主题色", link: "/blog/uni-app/theme" },
+          { text: "国际化", link: "/blog/uni-app/internationalization" },
+          { text: "拦截器", link: "/blog/uni-app/interceptor" },
+          { text: "wgt热更新", link: "/blog/uni-app/wgt-update" },
         ],
       },
       {
         text: "uni-clound",
         collapsed: false,
-        items: [{ text: "url化", link: "/blog/uni-clound/urlization" }],
+        items: [
+          { text: "公共模块", link: "/blog/uni-clound/common-module" },
+          { text: "单入口url化", link: "/blog/uni-clound/urlization" },
+          { text: "附件上传", link: "/blog/uni-clound/file-upload" },
+          { text: "备注", link: "/blog/uni-clound/notes" },
+        ],
       },
       {
         text: "webpack",
@@ -147,9 +155,7 @@ export default defineConfig({
       {
         text: "typescript",
         collapsed: false,
-        items: [
-          { text: "tsconfig", link: "/blog/typescript/tsconfig" },
-        ],
+        items: [{ text: "tsconfig", link: "/blog/typescript/tsconfig" }],
       },
       {
         text: "ci-cd",
