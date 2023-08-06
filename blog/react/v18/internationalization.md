@@ -121,3 +121,13 @@ class ClassDemo extends Component<Props> {
 
 export default withTranslation()(ClassDemo);
 ```
+
+## 切换语言
+
+```ts
+import { useTranslation } from "react-i18next";
+
+const { i18n } = useTranslation();
+
+i18n.changeLanguage(locale);
+```

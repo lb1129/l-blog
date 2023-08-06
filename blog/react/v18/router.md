@@ -37,7 +37,7 @@ const routes: RouteObject[] = [
         id: 'PersonalCenter',
         path: 'personalCenter',
         async lazy() {
-          const module = await import('@/views/index/Home')
+          const module = await import('@/views/personal-center/Index')
           return {
             Component: module.default
           }
@@ -51,8 +51,13 @@ const routes: RouteObject[] = [
           {
             id: 'BasicInfo',
             path: 'basicInfo',
-            handle: { needAuth: true, menuName: 'basicInfo' },
-            element: lazyLoad('personal-center/BasicInfo')
+            handle: { },
+            async lazy() {
+              const module = await import('@/views/personal-center/BasicInfo')
+              return {
+                Component: module.default
+              }
+            },
           }
         ]
       }
