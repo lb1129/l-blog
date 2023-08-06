@@ -16,28 +16,43 @@ const routes: RouteRecordRaw[] = [
     path: "/",
     name: "Index",
     meta: {},
-    component: () => import("@/views/Index.vue"),
+    component: () => import("@/views/index/Index.vue"),
     children: [
       {
         // 默认渲染的子路由
         path: "",
         name: "Home",
         meta: {},
-        component: () => import("@/views/Home.vue"),
+        component: () => import("@/views/index/Home.vue"),
       },
-      // ...
+      {
+        path: "personalCenter",
+        name: "PersonalCenter",
+        component: () => import("@/views/personal-center/Index.vue"),
+        meta: {},
+        // 默认子路由有path 则使用redirect导航到子路由
+        redirect: { name: "BasicInfo" },
+        children: [
+          {
+            path: "basicInfo",
+            name: "BasicInfo",
+            component: () => import("@/views/personal-center/BasicInfo.vue"),
+            meta: {},
+          },
+        ],
+      },
     ],
   },
   {
     path: "/login",
     name: "Login",
     meta: {},
-    component: () => import("@/views/Login.vue"),
+    component: () => import("@/views/authenticate/Login.vue"),
   },
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    component: () => import("@/views/NotFound.vue"),
+    component: () => import("@/views/sundry/NotFound.vue"),
   },
 ];
 

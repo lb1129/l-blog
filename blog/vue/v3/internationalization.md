@@ -77,3 +77,16 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 const msg = computed(() => t("helloWorld"));
 ```
+
+## 切换语言
+
+```vue
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n();
+
+const toggleLanguage = (value: string) => {
+  locale.value = value;
+};
+</script>
+```
