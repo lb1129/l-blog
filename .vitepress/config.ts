@@ -110,7 +110,7 @@ export default defineConfig({
               { text: "keep-alive", link: "/blog/angular/v16/keep-alive" },
               { text: "路由", link: "/blog/angular/v16/router" },
               { text: "数据仓库", link: "/blog/angular/v16/store" },
-              { text: "多级树", link: "/blog/angular/v16/multi-level-tree" },
+              { text: "不限层级树", link: "/blog/angular/v16/multi-level-tree" },
             ],
           },
         ],
