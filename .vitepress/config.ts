@@ -49,7 +49,7 @@ export default defineConfig({
               { text: "变更检查机制", link: "/blog/vue/v3/change-detection" },
               { text: "依赖注入", link: "/blog/vue/v3/dependency-injection" },
               { text: "前端储存", link: "/blog/vue/v3/storage" },
-              { text: "http请求", link: "/blog/vue/v3/http" },
+              { text: "http 请求", link: "/blog/vue/v3/http" },
               { text: "国际化", link: "/blog/vue/v3/internationalization" },
               { text: "jsx", link: "/blog/vue/v3/jsx" },
               { text: "keep-alive", link: "/blog/vue/v3/keep-alive" },
@@ -76,7 +76,7 @@ export default defineConfig({
                 text: "依赖注入",
                 link: "/blog/react/v18/dependency-injection",
               },
-              { text: "http请求", link: "/blog/react/v18/http" },
+              { text: "http 请求", link: "/blog/react/v18/http" },
               { text: "国际化", link: "/blog/react/v18/internationalization" },
               { text: "keep-alive", link: "/blog/react/v18/keep-alive" },
               { text: "路由", link: "/blog/react/v18/router" },
@@ -102,7 +102,7 @@ export default defineConfig({
                 text: "依赖注入",
                 link: "/blog/angular/v16/dependency-injection",
               },
-              { text: "http请求", link: "/blog/angular/v16/http" },
+              { text: "http 请求", link: "/blog/angular/v16/http" },
               {
                 text: "国际化",
                 link: "/blog/angular/v16/internationalization",
@@ -110,7 +110,10 @@ export default defineConfig({
               { text: "keep-alive", link: "/blog/angular/v16/keep-alive" },
               { text: "路由", link: "/blog/angular/v16/router" },
               { text: "数据仓库", link: "/blog/angular/v16/store" },
-              { text: "不限层级树", link: "/blog/angular/v16/multi-level-tree" },
+              {
+                text: "不限层级树",
+                link: "/blog/angular/v16/multi-level-tree",
+              },
             ],
           },
         ],
@@ -124,7 +127,7 @@ export default defineConfig({
           { text: "主题色", link: "/blog/uni-app/theme" },
           { text: "国际化", link: "/blog/uni-app/internationalization" },
           { text: "拦截器", link: "/blog/uni-app/interceptor" },
-          { text: "wgt热更新", link: "/blog/uni-app/wgt-update" },
+          { text: "wgt 热更新", link: "/blog/uni-app/wgt-update" },
         ],
       },
       {
@@ -132,9 +135,34 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "公共模块", link: "/blog/uni-clound/common-module" },
-          { text: "单入口url化", link: "/blog/uni-clound/urlization" },
+          { text: "单入口 url 化", link: "/blog/uni-clound/urlization" },
           { text: "附件上传", link: "/blog/uni-clound/file-upload" },
           { text: "备注", link: "/blog/uni-clound/notes" },
+        ],
+      },
+      {
+        text: "theme",
+        collapsed: false,
+        items: [
+          { text: "css 变量", link: "/blog/theme/css-variables" },
+          { text: "动态 style", link: "/blog/theme/dynamic-style" },
+          { text: "css-in-js", link: "/blog/theme/css-in-js" },
+        ],
+      },
+      {
+        text: "common",
+        collapsed: false,
+        items: [{ text: "订阅发布", link: "/blog/common/pubsub" }],
+      },
+      {
+        text: "unit-test",
+        collapsed: false,
+        items: [
+          { text: "前端单元测试", link: "/blog/unit-test/frontend" },
+          { text: "结合 Typescript", link: "/blog/unit-test/typescript" },
+          { text: "vue 测试", link: "/blog/unit-test/vue" },
+          { text: "react 测试", link: "/blog/unit-test/react" },
+          { text: "angular", link: "/blog/unit-test/angular" },
         ],
       },
       {
@@ -153,32 +181,18 @@ export default defineConfig({
         ],
       },
       {
-        text: "typescript",
-        collapsed: false,
-        items: [{ text: "tsconfig", link: "/blog/typescript/tsconfig" }],
-      },
-      {
         text: "ci-cd",
         collapsed: false,
         items: [
           { text: "代码及提交检查", link: "/blog/ci-cd/code-lint" },
-          { text: "vscode配置", link: "/blog/ci-cd/vscode-config" },
+          { text: "vscode 配置", link: "/blog/ci-cd/vscode-config" },
           { text: "gh-pages", link: "/blog/ci-cd/gh-pages" },
         ],
       },
       {
-        text: "theme",
+        text: "typescript",
         collapsed: false,
-        items: [
-          { text: "css变量", link: "/blog/theme/css-variables" },
-          { text: "动态style", link: "/blog/theme/dynamic-style" },
-          { text: "css-in-js", link: "/blog/theme/css-in-js" },
-        ],
-      },
-      {
-        text: "common",
-        collapsed: false,
-        items: [{ text: "订阅发布", link: "/blog/common/pubsub" }],
+        items: [{ text: "tsconfig", link: "/blog/typescript/tsconfig" }],
       },
     ],
 
