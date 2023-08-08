@@ -179,8 +179,8 @@ export class DemoService {
     return "viho";
   }
 
-  getNameAsync() {
-    return of("viho");
+  getAge() {
+    return of(18);
   }
 }
 ```
@@ -207,9 +207,9 @@ describe("DemoService", () => {
     expect(service.getName()).toBe("viho");
   });
 
-  it("#getNameAsync should return value from observable", (done) => {
-    service.getNameAsync().subscribe((value) => {
-      expect(value).toBe("viho");
+  it("#getAge should return value from observable", (done) => {
+    service.getAge().subscribe((value) => {
+      expect(value).toBe(18);
       done();
     });
   });
