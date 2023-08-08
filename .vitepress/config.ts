@@ -162,7 +162,7 @@ export default defineConfig({
           { text: "结合 Typescript", link: "/blog/unit-test/typescript" },
           { text: "vue 测试", link: "/blog/unit-test/vue" },
           { text: "react 测试", link: "/blog/unit-test/react" },
-          { text: "angular", link: "/blog/unit-test/angular" },
+          { text: "angular 测试", link: "/blog/unit-test/angular" },
         ],
       },
       {
@@ -172,10 +172,10 @@ export default defineConfig({
           {
             text: "v5",
             items: [
-              { text: "loader", link: "/blog/webpack/v5/loader" },
-              { text: "plugin", link: "/blog/webpack/v5/plugin" },
-              { text: "env", link: "/blog/webpack/v5/env" },
-              { text: "dev-server", link: "/blog/webpack/v5/dev-server" },
+              { text: "从零开始", link: "/blog/webpack/v5/zero.md" },
+              { text: "开发环境搭建", link: "/blog/webpack/v5/development.md" },
+              { text: "生产环境搭建", link: "/blog/webpack/v5/product.md" },
+              { text: "自定义环境变量", link: "/blog/webpack/v5/env.md" },
             ],
           },
         ],

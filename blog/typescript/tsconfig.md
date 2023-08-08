@@ -1,6 +1,6 @@
 # tsconfig
 
-常用选项说明 [文档](https://www.typescriptlang.org/tsconfig)
+常用选项说明 [全部选项说明文档](https://www.typescriptlang.org/tsconfig)
 
 ```json
 {
