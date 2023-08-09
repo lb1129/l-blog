@@ -33,6 +33,19 @@ export default defineConfig({
         link: "/blog/vue/v3/change-detection",
         activeMatch: "/blog/",
       },
+      {
+        text: '个人项目',
+        items: [
+          { text: 'l-admin-vue', link: 'https://www.leibo.group/l-admin-vue/' },
+          { text: 'l-admin-react', link: 'https://www.leibo.group/l-admin-react/' },
+          { text: 'l-admin-angular', link: 'https://www.leibo.group/l-admin-angular/' },
+          { text: 'l-uni', link: 'https://www.leibo.group/l-uni/' },
+          { text: 'l-project', link: 'https://github.com/lb1129/l-project' },
+          { text: 'l-project-vue', link: 'https://github.com/lb1129/l-project-vue' },
+          { text: 'l-project-react', link: 'https://github.com/lb1129/l-project-react' },
+          { text: 'l-blog', link: 'https://github.com/lb1129/l-blog' }
+        ]
+      }
     ],
 
     socialLinks: [{ icon: "github", link: "https://github.com/lb1129" }],
@@ -44,7 +57,7 @@ export default defineConfig({
         items: [
           {
             text: "v3",
-            collapsed: false,
+            collapsed: true,
             items: [
               { text: "变更检查机制", link: "/blog/vue/v3/change-detection" },
               { text: "依赖注入", link: "/blog/vue/v3/dependency-injection" },
@@ -66,7 +79,7 @@ export default defineConfig({
         items: [
           {
             text: "v18",
-            collapsed: false,
+            collapsed: true,
             items: [
               {
                 text: "变更检查机制",
@@ -92,7 +105,7 @@ export default defineConfig({
         items: [
           {
             text: "v16",
-            collapsed: false,
+            collapsed: true,
             items: [
               {
                 text: "变更检查机制",
@@ -172,12 +185,13 @@ export default defineConfig({
           {
             text: "v5",
             items: [
-              { text: "从零开始", link: "/blog/webpack/v5/zero.md" },
-              { text: "开发环境搭建", link: "/blog/webpack/v5/development.md" },
-              { text: "生产环境搭建", link: "/blog/webpack/v5/product.md" },
-              { text: "自定义环境变量", link: "/blog/webpack/v5/env.md" },
+              { text: "搭建单入口脚手架", link: "/blog/webpack/v5/scaffold.md" }
             ],
           },
+          {
+            text: '优化打包速度',
+            link: '/blog/webpack/optimization.md'
+          }
         ],
       },
       {
