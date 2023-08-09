@@ -6,7 +6,7 @@ export default defineConfig({
   lang: "zh-CN",
   base: "/l-blog",
   lastUpdated: true,
-  cleanUrls: true,
+  // cleanUrls: true,
 
   sitemap: {
     hostname: "https://www.leibo.group",
