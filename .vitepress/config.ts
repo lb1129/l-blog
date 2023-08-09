@@ -195,6 +195,16 @@ export default defineConfig({
         ],
       },
       {
+        text: 'vite',
+        collapsed: false,
+        items: [
+          {
+            text: '预构建',
+            link: '/blog/vite/optimizeDeps.md'
+          }
+        ]
+      },
+      {
         text: "ci-cd",
         collapsed: false,
         items: [
