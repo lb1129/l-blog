@@ -145,7 +145,9 @@ routes.forEach((route) => {
   router.addRoute("Index", route);
 });
 
-// 触发重新匹配
-router.replace(router.currentRoute.value.fullPath);
+// 完成初始导航后 触发重新匹配
+router.isReady().then(() => {
+  router.replace(router.currentRoute.value.fullPath);
+});
 </script>
 ```
