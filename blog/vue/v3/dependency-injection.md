@@ -4,6 +4,19 @@
 
 ## Provide
 
+应用层提供服务（非响应式数据，响应式数据）
+
+```ts
+import { createApp, ref } from "vue";
+
+const app = createApp({});
+
+const message = ref("hello");
+
+app.provide("hi", "hi");
+app.provide("message", message);
+```
+
 上层组件提供服务（非响应式数据，响应式数据）
 
 ```vue
