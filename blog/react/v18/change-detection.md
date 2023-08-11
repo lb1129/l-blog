@@ -2,7 +2,7 @@
 
 ## 检查流程
 
-1. 类组件中调用 setState forceUpdate 触发变更检查，函数组件调用 useState、useReducer 状态管理 hooks 的 dispatch 触发变更检查
+1. 类组件中调用 setState forceUpdate 触发变更检查，函数组件调用 useState、useReducer 状态管理 hooks 的 dispatch 触发变更检查（批处理）
 2. 触发变更检查的组件及其后代组件进入参数，状态比对，（此处可进行编码优化）
 3. 未跳过更新的组件进入 rerender 流程，重新生成 vnode（类组件 render 被调用，函数组件重新执行）
 4. vnode 转 fiber，新旧 fiber diff（可中断，由浏览器 requesetIdleCallback 调度）(中断恢复依靠父级，子级，兄弟指针)
@@ -157,7 +157,19 @@ export default class ClassDemo extends Component {
 ## 批处理
 
 react18 之前，在定时器，原生事件回调，promise 中， 同一调用栈中多次对状态变更不会进行批处理，除非手动使用 `ReactDOM.unstable_batchedUpdates`  
-react18 在上述情况中也可以自动进行批处理，所以进行状态变更操作后，立即获取的状态值都将是旧值
+react18 在上述情况中也可以自动进行批处理；
+
+### 异步更新时的批处理
+
+有状态变更操作时，react 会为本次批处理创建一个状态缓冲队列，并创建一个处理本次批处理的异步任务（浏览器支持创建微任务则为微任务，否则降级为宏任务），后续在当前调用栈下多次进行状态变更操作，都将推入本次批处理的状态缓冲队列中；异步任务会对状态缓冲队列中的状态进行整合，然后执行一次更新流程；异步任务何时执行交给事件循环机制调度
+
+### 同步更新时的批处理
+
+`ReactDOM.flushSync` 会对回调里同步执行的多次状态变更操作进行整合，然后执行一次更新流程
+
+## 立即获取状态值
+
+react18 在进行状态变更操作后，立即获取的状态值都将是旧值
 
 ```tsx
 // 伪代码 以下都将输出 0
