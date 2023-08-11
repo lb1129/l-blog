@@ -1,5 +1,7 @@
 # 依赖注入
 
+组件，指令，管道，服务，甚至方法，都可以注入 提供到根模块，或上层模块，上层组件，或本模块，本组件上的依赖项，并且注入时可指定依赖项的查找范围
+
 ## 定义依赖项
 
 class 依赖项
@@ -175,4 +177,86 @@ constructor(
     @SkipSelf() // 跳过当前组件注入器 并在注入器树中向上查找
     private demoService: DemoService,
   ) {}
+```
+
+## 多种注入器
+
+根模块注入器，特性模块注入器，组件,指令注入器（服务只会在某个注入器内保持单例）
+
+## 单例模式
+
+在整个应用程序级别保持单例 请将服务提供到根模块注入器
+
+### 使用 providedIn
+
+```ts
+import { Injectable } from "@angular/core";
+
+@Injectable({
+  providedIn: "root",
+})
+export class UserService {}
+```
+
+### forRoot()
+
+创建带 forRoot 静态方法的模块
+
+```ts
+import {
+  ModuleWithProviders,
+  NgModule,
+  Optional,
+  SkipSelf,
+} from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { GreetingComponent } from "./greeting.component";
+import { UserServiceConfig } from "./user.service";
+
+@NgModule({
+  imports: [CommonModule],
+  declarations: [GreetingComponent],
+  exports: [GreetingComponent],
+  // providers: []
+})
+export class GreetingModule {
+  constructor(@Optional() @SkipSelf() parentModule?: GreetingModule) {
+    if (parentModule) {
+      throw new Error(
+        "GreetingModule is already loaded. Import it in the AppModule only"
+      );
+    }
+  }
+
+  static forRoot(
+    config: UserServiceConfig
+  ): ModuleWithProviders<GreetingModule> {
+    return {
+      ngModule: GreetingModule,
+      // 提供在整个应用程序中需要保持单例的服务
+      providers: [{ provide: UserServiceConfig, useValue: config }],
+    };
+  }
+}
+```
+
+在根模块使用 forRoot 导入
+
+```ts
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppComponent } from "./app.component";
+import { GreetingModule } from "./greeting/greeting.module";
+import { AppRoutingModule } from "./app-routing.module";
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    GreetingModule.forRoot({ userName: "Miss Marple" }),
+    AppRoutingModule,
+  ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
 ```

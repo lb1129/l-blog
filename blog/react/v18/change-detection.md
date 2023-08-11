@@ -4,7 +4,7 @@
 
 1. 类组件中调用 setState forceUpdate 触发变更检查，函数组件调用 useState、useReducer 状态管理 hooks 的 dispatch 触发变更检查
 2. 触发变更检查的组件及其后代组件进入参数，状态比对，（此处可进行编码优化）
-3. 未进行渲染优化的组件进入 rerender 流程，重新生成 vnode（类组件 render 被调用，函数组件重新执行）
+3. 未跳过更新的组件进入 rerender 流程，重新生成 vnode（类组件 render 被调用，函数组件重新执行）
 4. vnode 转 fiber，新旧 fiber diff（可中断，由浏览器 requesetIdleCallback 调度）(中断恢复依靠父级，子级，兄弟指针)
 5. diff 全部完成，如有差异，进入 commit 阶段，一次性更新真实 DOM（不可中断）
 
@@ -181,7 +181,7 @@ setTimeout(() => {
 });
 ```
 
-## 渲染优化
+## 跳过更新
 
 这里我们把 触发状态更新的组件 叫做 起始组件
 

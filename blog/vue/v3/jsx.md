@@ -2,12 +2,12 @@
 
 ## 开启 jsx 支持
 
-安装 @vitejs/plugin-vue
+安装 @vitejs/plugin-vue-jsx
 
 配置 vite.config.ts
 
 ```ts
-import vue from "@vitejs/plugin-vue";
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
   plugins: [

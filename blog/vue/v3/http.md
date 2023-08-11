@@ -134,6 +134,11 @@ export interface IResponse<T> {
   errMsg: string;
 }
 
+const axiosInstance = axios.create({
+  baseURL: config.http.baseURL,
+  timeout: config.http.timeout
+})
+
 axiosInstance.interceptors.request.use(
   async (config) => {
     // 从本地存储获取token

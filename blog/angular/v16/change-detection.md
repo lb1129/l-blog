@@ -3,8 +3,9 @@
 ## 检查流程
 
 1. 手动，或通过异步事件触发变更检查
-2. 从根组件开始，自上到下遍历整棵组件树，寻找组件数据模型（参数，状态）的更改（此处可进行编码优化）
-3. 将更新应用到真实 DOM
+2. 从整颗组件树或部分开始对未设置跳过的组件进行检查（此处可进行编码优化）
+3. 未设置跳过的组件进行数据模型（参数，状态）比对，模板表达式重新估算，寻找更改
+4. 将更改应用到真实 DOM
 
 ## 手动触发
 
@@ -152,7 +153,66 @@ export class DemoComponent {
 }
 ```
 
-## 性能优化
+## 跳过检查
+
+### OnPush 模式
+
+组件设置了 OnPush，但以下情况也会触发变更检查
+
+1. 组件 props 变化（原始类型值不相等，引用类型切换了引用地址）
+2. 组件内有事件被触发
+3. 组件的后代组件有事件被触发
+
+```ts
+import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
+
+@Component({
+  selector: "app-demo",
+  template: `<p>{{ text }}</p>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class DemoComponent {
+  @Input() text!: string;
+
+  constructor() {}
+}
+```
+
+### 分离视图
+
+即使已分离的视图已标记为脏的，它们在重新附加上去之前也不会被检查。
+
+```ts
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Input,
+  ChangeDetectorRef,
+} from "@angular/core";
+
+@Component({
+  selector: "app-demo",
+  template: `<p>{{ text }}</p>`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class DemoComponent {
+  @Input() text!: string;
+
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+
+  detach() {
+    // 分离视图
+    this.changeDetectorRef.detach();
+  }
+
+  reattach() {
+    // 附加回变更检测树
+    this.changeDetectorRef.reattach();
+  }
+}
+```
+
+## 其他优化
 
 ### zone 污染
 
@@ -220,28 +280,5 @@ export class DemoComponent {
   add() {
     this.count++;
   }
-}
-```
-
-### OnPush 模式
-
-组件设置了 OnPush，但以下情况也会触发变更检查
-
-1. 组件 props 变化（原始类型值不相等，引用类型切换了引用地址）
-2. 组件内有事件被触发
-3. 组件的后代组件有事件被触发
-
-```ts
-import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
-
-@Component({
-  selector: "app-demo",
-  template: `<p>{{ text }}</p>`,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-export class DemoComponent {
-  @Input() text!: string;
-
-  constructor() {}
 }
 ```

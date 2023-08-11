@@ -16,7 +16,7 @@ const keepAliveInclude = ref<string[]>([]);
 
 watchEffect(() => {
   const record = route.matched[route.matched.length - 1];
-  // 根据业务需要 缓存路由name（路由name与组件同名）
+  // 根据业务场景 将需要缓存的路由name（路由name与组件同名）添加到 include
   keepAliveInclude.value = [record.name as string];
 });
 </script>
