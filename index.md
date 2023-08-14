@@ -9,7 +9,7 @@ hero:
     alt: logo
   actions:
     - theme: brand
-      text: 博客
+      text: 前往博客
       link: /blog/vue/v3/change-detection
 
 features:
