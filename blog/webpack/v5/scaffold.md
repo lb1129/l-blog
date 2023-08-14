@@ -148,7 +148,7 @@ module.exports = {
 
 ## webpack.common.cjs
 
-结合 eslint [详见文档代码及提交检查](/blog/ci-cd/code-lint.md)
+结合 eslint [详见文档代码及提交检查](/blog/workspace/code-lint.md)
 
 ```js
 const fs = require("fs");
