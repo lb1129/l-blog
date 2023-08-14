@@ -1,6 +1,8 @@
-# GitHub Pages
+# Github Actions
 
-## 创建目录
+## GitHub Pages
+
+### 创建目录
 
 在项目根目录下创建如下目录
 
@@ -11,7 +13,7 @@
 
 ```
 
-## gh-pages.yml
+### gh-pages.yml
 
 ```yml
 name: Deployment
