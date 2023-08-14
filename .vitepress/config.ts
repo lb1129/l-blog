@@ -34,18 +34,30 @@ export default defineConfig({
         activeMatch: "/blog/",
       },
       {
-        text: '个人项目',
+        text: "个人项目",
         items: [
-          { text: 'l-admin-vue', link: 'https://www.leibo.group/l-admin-vue/' },
-          { text: 'l-admin-react', link: 'https://www.leibo.group/l-admin-react/' },
-          { text: 'l-admin-angular', link: 'https://www.leibo.group/l-admin-angular/' },
-          { text: 'l-uni', link: 'https://www.leibo.group/l-uni/' },
-          { text: 'l-project', link: 'https://github.com/lb1129/l-project' },
-          { text: 'l-project-vue', link: 'https://github.com/lb1129/l-project-vue' },
-          { text: 'l-project-react', link: 'https://github.com/lb1129/l-project-react' },
-          { text: 'l-blog', link: 'https://github.com/lb1129/l-blog' }
-        ]
-      }
+          { text: "l-admin-vue", link: "https://www.leibo.group/l-admin-vue/" },
+          {
+            text: "l-admin-react",
+            link: "https://www.leibo.group/l-admin-react/",
+          },
+          {
+            text: "l-admin-angular",
+            link: "https://www.leibo.group/l-admin-angular/",
+          },
+          { text: "l-uni", link: "https://www.leibo.group/l-uni/" },
+          { text: "l-project", link: "https://github.com/lb1129/l-project" },
+          {
+            text: "l-project-vue",
+            link: "https://github.com/lb1129/l-project-vue",
+          },
+          {
+            text: "l-project-react",
+            link: "https://github.com/lb1129/l-project-react",
+          },
+          { text: "l-blog", link: "https://github.com/lb1129/l-blog" },
+        ],
+      },
     ],
 
     socialLinks: [{ icon: "github", link: "https://github.com/lb1129" }],
@@ -185,38 +197,58 @@ export default defineConfig({
           {
             text: "v5",
             items: [
-              { text: "搭建单入口脚手架", link: "/blog/webpack/v5/scaffold.md" }
+              {
+                text: "搭建单入口脚手架",
+                link: "/blog/webpack/v5/scaffold.md",
+              },
             ],
           },
           {
-            text: '优化打包速度',
-            link: '/blog/webpack/optimization.md'
-          }
+            text: "优化打包速度",
+            link: "/blog/webpack/optimization.md",
+          },
         ],
       },
       {
-        text: 'vite',
+        text: "vite",
         collapsed: false,
         items: [
           {
-            text: '预构建',
-            link: '/blog/vite/optimizeDeps.md'
-          }
-        ]
+            text: "预构建",
+            link: "/blog/vite/optimizeDeps.md",
+          },
+        ],
+      },
+      {
+        text: "workspace",
+        collapsed: false,
+        items: [
+          { text: "代码及提交检查", link: "/blog/workspace/code-lint" },
+          { text: "vscode 配置", link: "/blog/workspace/vscode-config" },
+        ],
       },
       {
         text: "ci-cd",
         collapsed: false,
         items: [
-          { text: "代码及提交检查", link: "/blog/ci-cd/code-lint" },
-          { text: "vscode 配置", link: "/blog/ci-cd/vscode-config" },
-          { text: "gh-pages", link: "/blog/ci-cd/gh-pages" },
+          { text: "github-actions", link: "/blog/ci-cd/github-actions" },
+          { text: "私有 npm registry", link: "/blog/ci-cd/npm-proxy-registry" },
         ],
       },
       {
         text: "typescript",
         collapsed: false,
         items: [{ text: "tsconfig", link: "/blog/typescript/tsconfig" }],
+      },
+      {
+        text: "算法",
+        collapsed: false,
+        items: [
+          { text: "tree", link: "/blog/algorithm/tree" },
+          { text: "longestSlice", link: "/blog/algorithm/longest-slice" },
+          { text: "regular", link: "/blog/algorithm/regular" },
+          { text: "sort", link: "/blog/algorithm/sort" },
+        ],
       },
     ],
 
