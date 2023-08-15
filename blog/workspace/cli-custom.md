@@ -199,3 +199,25 @@ ng build --base-href /angular/
 ```
 
 对于 `APP_BASE_HREF` token，只能对 router base 起效，不能对 index.html base 起效
+
+### 模块解析路径别名
+
+修改 tsconfig.json
+
+```json
+{
+  // ...
+  "compilerOptions": {
+    // ...
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./node_modules/*"]
+    }
+  }
+  // ...
+}
+```
+
+## 特别说明
+
+脚手架项目中使用 typescript ，不管是使用 tsc 编译 typescript 或是 使用 babel 编译 typescript，`模块解析路径别名` 也要在 tsconfig.json compilerOptions paths 中进行配置
