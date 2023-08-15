@@ -1,6 +1,6 @@
 # 常见脚手架定制
 
-请求代理，部署路径（history 路由 base），模块解析路径别名，css 预处理（对无法选择 css 预处理的脚手架进行配置）
+请求代理，部署路径（history 路由 base），模块解析路径别名（脚本文件，样式文件都能使用），css 预处理（对无法选择 css 预处理的脚手架进行配置）
 
 ## @vue/cli
 
@@ -63,7 +63,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       // 模块解析路径别名
       alias: {
-        // 默认已有
+        // @ 默认已有
         "@": fileURLToPath(new URL("./src", import.meta.url)),
         "~": fileURLToPath(new URL("./node_modules", import.meta.url)),
       },
@@ -168,8 +168,10 @@ npx @angular/cli new angular16
 
 ```json
 {
+  // ...
   "projects": {
     "appName": {
+      // ...
       "architect": {
         "serve": {
           // ...
@@ -184,6 +186,7 @@ npx @angular/cli new angular16
           }
           // ...
         }
+        // ...
       }
     }
   }
@@ -201,6 +204,69 @@ ng build --base-href /angular/
 对于 `APP_BASE_HREF` token，只能对 router base 起效，不能对 index.html base 起效
 
 ### 模块解析路径别名
+
+安装依赖
+
+```sh
+npm i @angular-builders/custom-webpack -D
+```
+
+项目根目录创建 extra-webpack.config.ts
+
+```ts
+import { resolve } from "node:path";
+
+module.exports = {
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+      "~": resolve(__dirname, "node_modules"),
+    },
+  },
+};
+```
+
+修改 angular.json
+
+```json
+{
+  // ...
+  "projects": {
+    "appName": {
+      // ...
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            // ...
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.ts"
+            }
+          }
+          // ...
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server"
+          // ...
+        },
+        "extract-i18n": {
+          "builder": "@angular-builders/custom-webpack:extract-i18n"
+          // ...
+        },
+        "test": {
+          "builder": "@angular-builders/custom-webpack:karma",
+          "options": {
+            // ...
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.ts"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 修改 tsconfig.json
 
@@ -220,4 +286,8 @@ ng build --base-href /angular/
 
 ## 特别说明
 
-脚手架项目中使用 typescript ，不管是使用 tsc 编译 typescript 或是 使用 babel 编译 typescript，`模块解析路径别名` 也要在 tsconfig.json compilerOptions paths 中进行配置
+项目中使用 typescript ，`模块解析路径别名` 也要在 tsconfig.json compilerOptions paths 中进行配置
+
+tsc 编译 ts 时，需要模块解析路径别名
+
+babel 编译 ts + 插件 fork-ts-checker-webpack-plugin 进行类型检查，该插件同样需要模块解析路径别名
