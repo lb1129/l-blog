@@ -225,6 +225,7 @@ export default defineConfig({
         items: [
           { text: "代码及提交检查", link: "/blog/workspace/code-lint" },
           { text: "vscode 配置", link: "/blog/workspace/vscode-config" },
+          { text: "常见脚手架定制", link: "/blog/workspace/cli-custom" },
         ],
       },
       {
@@ -233,6 +234,7 @@ export default defineConfig({
         items: [
           { text: "github-actions", link: "/blog/ci-cd/github-actions" },
           { text: "私有 npm registry", link: "/blog/ci-cd/npm-proxy-registry" },
+          { text: "nginx", link: "/blog/ci-cd/nginx" },
         ],
       },
       {
