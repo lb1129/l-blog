@@ -22,10 +22,9 @@ const getLongestSlice = (numberList, operator) => {
       // 长度相等就添加
       if (result[0].length === current.length) {
         result.push(current);
-      } else if (result[0].length < current.length) {
-        // 长度小于就覆盖
-        result = [current];
       }
+      // 最后一个元素了 不用比较了 返回结果
+      return result;
     }
     for (let m = i + 1; m < listLen; m++) {
       const next = numberList[m];
@@ -56,9 +55,8 @@ const getLongestSlice = (numberList, operator) => {
             // 长度小于就覆盖
             result = [current];
           }
-          current = [];
-          i = m;
-          break;
+          // 满足条件且是最后一个元素了 返回结果
+          return result;
         }
       } else {
         // 长度相等就添加
