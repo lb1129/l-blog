@@ -219,7 +219,7 @@ describe("DemoService", () => {
 ## 运行测试用例
 
 ```sh
-ng serve
+ng test
 # 或者
 npm run test
 ```
