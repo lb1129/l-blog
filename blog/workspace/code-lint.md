@@ -35,6 +35,9 @@ module.exports = {
   extends: ["eslint:recommended", "plugin:prettier/recommended"],
   parserOptions: {
     ecmaVersion: "latest",
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   rules: {
     "prettier/prettier": "warn",
