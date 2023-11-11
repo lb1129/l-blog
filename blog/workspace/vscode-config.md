@@ -25,7 +25,13 @@ settings.json
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "less",
+    "vue"
+  ]
 }
 ```
 
